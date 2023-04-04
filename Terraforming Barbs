@@ -1,4 +1,13 @@
-
+/*
+	Created by	: Ichiro
+	Contact		: 
+	
+	Adapted by 	: Assashina
+	TW version	: v8.45.1
+	Skype 		: Youro-Aks
+	Mail 		: Aks@fireflies.fr
+*/
+// ----------------------- Configuration utilisateur
 /*
 var numScoot = 4; // seulement envoyÃ©s si un batiment passe au niveau zero
 var unitUsed = ["axe", "light", "heavy", "sword", "spear"];  // liste de prioritÃ© des troupes d'accompagnement
