@@ -266,7 +266,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
                     "img": "https://dsyy.innogamescdn.com/asset/08bd76e4/graphic/unit/recruit/ram.png"
                 }, {
                     "id": "catapult",
-                    "name": "Catapult",
+                    "name": "Catapulte",
                     "img": "https://dsyy.innogamescdn.com/asset/08bd76e4/graphic/unit/recruit/catapult.png"
                 }];
                 break;
@@ -279,7 +279,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
                 });JSON.stringify(list);*/
                 items = [{
                     "id": "main",
-                    "name": "HQ",
+                    "name": "Quartier gÃ©nÃ©ral",
                     "img": "https://dsyy.innogamescdn.com/asset/08bd76e4/graphic/buildings/mid/main3.png"
                 }, {
                     "id": "barracks",
@@ -348,7 +348,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
                 }];
                 items = [{
                     "id": "main",
-                    "name": "HQ",
+                    "name": "Quartier gÃ©nÃ©ral",
                     "img": "/graphic/buildings/main.png"
                 }, {
                     "id": "barracks",
@@ -522,7 +522,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
 
     // --------  Dev config ------------
     var debug = false;
-    var LOCALSTORAGE_NS = 'tw-scripts:Cat'; // avoid name conflicts
+    var LOCALSTORAGE_NS = 'tw-scripts:cata'; // avoid name conflicts
 
     // --- defaults
     var persistentConfig = JSON.parse(localStorage.getItem(LOCALSTORAGE_NS + ":config") || "{}");
@@ -567,13 +567,13 @@ $.each(UnitPopup.unit_data, function(a,b) {
         var content = $("<div>").append("<p>Troupes d'accompagnement:</p>").append(unitOrder.element).append("<p>BÃ¢timents Ã  dÃ©truire:</p>").append(buildingOrder.element);
         content.append("<br>");
         content.append(s('<label for="numScout">Nombre de scouts</label>: <input type="text" name="numScout" value="%1"/>', +numScoot));
-        content.append('<label for="More Kaboom">Envoyer des catapultes supplÃ©mentaires</label>: <input type="checkbox" name="More Kaboom" ' + (extraCata ? 'checked="true"' : '') + '/>');
+        content.append('<label for="extraCata">Envoyer des catapultes supplÃ©mentaires</label>: <input type="checkbox" name="extraCata" ' + (extraCata ? 'checked="true"' : '') + '/>');
 
         function readForm() {
             persistentConfig.unitUsed = (unitOrder.list());
             persistentConfig.buildingIds = (buildingOrder.list());
             persistentConfig.numScoot = +content.find("[name='numScout']").val();
-            persistentConfig.extraCata = content.find("[name='More Kaboom']").is(':checked');
+            persistentConfig.extraCata = content.find("[name='extraCata']").is(':checked');
 
             localStorage.setItem(LOCALSTORAGE_NS + ":config", JSON.stringify(persistentConfig));
 
@@ -585,7 +585,7 @@ $.each(UnitPopup.unit_data, function(a,b) {
         }
 
         var el = TWScript.UI.ConfirmationBox(content, [{
-            text: 'Nerd',
+            text: 'Oui',
             callback: readForm,
             confirm: true
         }]);
